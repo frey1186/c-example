@@ -4,16 +4,17 @@
 
 #include <stdio.h>
 
+int put_length(const char s[]){
+	int i=0;
+	while (s[i]) i++;
+	return i;
+}
+
 void put_stringr(const char s[]){ 
-	char tmp_str[]={};
-	int i = 0;
-	while (s[i]) { 
-		tmp_str[i]=s[i];
-		i++;
+	int len = put_length(s);
+	for(int i=0;i<=len;i++){
+		putchar(s[len-i-1]);
 	}
-	tmp_str[i]='\0';
-	putchar(s[i]);
-	put_stringr(tmp_str);
 }
 
 int main(void){ 
